@@ -23,7 +23,6 @@ DATADIR?=$(PREFIX)/share
 HDRDIR?=$(PREFIX)/include/iproute2
 DOCDIR?=$(DATADIR)/doc/iproute2
 MANDIR?=$(DATADIR)/man
-ARPDDIR?=/var/lib/arpd
 KERNEL_INCLUDE?=/usr/include
 BASH_COMPDIR?=$(DATADIR)/bash-completion/completions
 
@@ -98,7 +97,6 @@ config.mk:
 install: all
 	install -m 0755 -d $(DESTDIR)$(SBINDIR)
 	install -m 0755 -d $(DESTDIR)$(CONFDIR)
-	install -m 0755 -d $(DESTDIR)$(ARPDDIR)
 	install -m 0755 -d $(DESTDIR)$(HDRDIR)
 	@for i in $(SUBDIRS);  do $(MAKE) -C $$i install; done
 	install -m 0644 $(shell find etc/iproute2 -maxdepth 1 -type f) $(DESTDIR)$(CONFDIR)

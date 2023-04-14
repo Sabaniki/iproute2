@@ -66,6 +66,8 @@ enum {
 	SEG6_LOCAL_ACTION_END_BPF	= 15,
 	/* decap and lookup of DA in v4 or v6 table */
 	SEG6_LOCAL_ACTION_END_DT46	= 16,
+	/* add for play by sabaniki */
+	SEG6_LOCAL_ACTION_END_SABANIKI	= 17,
 
 	__SEG6_LOCAL_ACTION_MAX,
 };
