@@ -28,7 +28,8 @@ enum {
 	SEG6_LOCAL_BPF,
 	SEG6_LOCAL_VRFTABLE,
 	SEG6_LOCAL_COUNTERS,
-	SEG6_LOCAL_FLAVORS,
+	SEG6_LOCAL_NF,
+	// SEG6_LOCAL_FLAVORS,
 	__SEG6_LOCAL_MAX,
 };
 #define SEG6_LOCAL_MAX (__SEG6_LOCAL_MAX - 1)
@@ -67,6 +68,8 @@ enum {
 	SEG6_LOCAL_ACTION_END_BPF	= 15,
 	/* decap and lookup of DA in v4 or v6 table */
 	SEG6_LOCAL_ACTION_END_DT46	= 16,
+	/* decap and apply netfilter rule */
+	SEG6_LOCAL_ACTION_END_NF	= 17,
 
 	__SEG6_LOCAL_ACTION_MAX,
 };
