@@ -90,7 +90,7 @@ endif
 ifneq ($(TC_CONFIG_NO_XT),y)
   ifeq ($(TC_CONFIG_XT),y)
     TCSO += m_xt.so
-    TCMODULES += em_ipt.o
+    TCMODULES += e
     ifeq ($(TC_CONFIG_IPSET),y)
       TCMODULES += em_ipset.o
     endif
@@ -102,7 +102,7 @@ ifneq ($(TC_CONFIG_NO_XT),y)
         CFLAGS += -DTC_CONFIG_XT_H
         TCSO += m_xt_old.so
       else
-        TCMODULES += m_ipt.o
+        TCMODULES += 
       endif
     endif
   endif
@@ -174,7 +174,7 @@ m_xt_old.so: m_xt_old.c
 
 em_ipset.o: CFLAGS += $$($(PKG_CONFIG) xtables --cflags)
 
-em_ipt.o: CFLAGS += $$($(PKG_CONFIG) xtables --cflags)
+e: CFLAGS += $$($(PKG_CONFIG) xtables --cflags)
 
 ifeq ($(TC_CONFIG_XT),y)
   LDLIBS += $$($(PKG_CONFIG) xtables --libs)
